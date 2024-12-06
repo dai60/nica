@@ -4,11 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>nica reklama</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="font-roboto">
+    <header class="flex flex-col w-full min-h-screen">
+        <nav class="flex w-full justify-between items-center py-6 mx-auto max-w-screen-lg bg-white">
+            <a class="font-roboto-condensed font-bold text-2xl text-[#878B9B] ms-4 sm:ms-6" href="#">nica reklama</a>
+            <div class="block md:hidden border-[#404445] border-t w-[32px] h-[18px] me-8 sm:me-10">
+                <div class="border-[#404445] border-y mt-[8px] h-[9px]"></div>
+            </div>
+            <div class="hidden md:flex flex-row gap-12 me-12">
+                <a class="font-black text-[#43C45F]" href="#">Pagrindinis</a>
+                <a href="#">Apie mus</a>
+                <a href="#">Paslaugos</a>
+                <a href="#">Straipsniai</a>
+                <a href="#">Kontaktai</a>
+            </div>
+        </nav>
+        <div class="
+            bg-[url('../assets/header.jpg')] bg-[#626471] bg-opacity-50 bg-blend-multiply bg-cover bg-center
+            flex flex-grow justify-center items-center
+        ">
+            <div class="text-white text-center flex flex-col items-center py-24">
+                <h1 class="text-5xl sm:text-7xl font-medium mb-8">Įmonė besiverčianti reklama</h1>
+                <p class="text-2xl font-normal text-[#D5D7D8] w-3/4 mb-12">
+                    Įmonės pristatymas keliais sakiniais, pagrindinės veiklos apibūdinimas
+                </p>
+                <a class="block uppercase bg-[#43C45F] px-12 py-3" href="#">Susisiekti</a>
+            </div>
+        </div>
+    </header>
 </body>
 
 </html>
