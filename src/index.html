@@ -13,23 +13,24 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body class="font-roboto">
     <header class="flex flex-col w-full min-h-screen">
-        <nav class="w-full px-8 py-6 mx-auto bg-white">
-            <div class="flex justify-between items-center mx-auto max-w-screen-xl">
+        <nav class="flex flex-col md:flex-row items-center gap-4 px-8 py-6 text-nowrap max-w-screen-xl mx-auto w-full">
+            <div class="flex justify-between items-center w-full mx-auto max-w-screen-xl">
                 <a class="font-roboto-condensed font-bold text-2xl text-[#878B9B]" href="#">nica reklama</a>
-                <div class="block md:hidden border-primary border-t w-[32px] h-[18px]">
+                <div onclick="toggleDropdown('nav-dropdown-menu')" class="block md:hidden border-primary border-t w-[32px] h-[18px]">
                     <div class="border-primary border-y mt-[8px] h-[9px]"></div>
                 </div>
-                <div class="hidden md:flex flex-row gap-12 me-12">
-                    <a class="font-black text-green" href="#">Pagrindinis</a>
-                    <a href="#">Apie mus</a>
-                    <a href="#">Paslaugos</a>
-                    <a href="#">Straipsniai</a>
-                    <a href="#">Kontaktai</a>
-                </div>
+            </div>
+            <div id="nav-dropdown-menu" class="hidden flex-col gap-2 text-center md:flex md:flex-row md:gap-12">
+                <a class="font-black text-green" href="#">Pagrindinis</a>
+                <a href="#">Apie mus</a>
+                <a href="#">Paslaugos</a>
+                <a href="#">Straipsniai</a>
+                <a href="#">Kontaktai</a>
             </div>
         </nav>
         <div class="
@@ -46,11 +47,11 @@
         </div>
     </header>
     <main>
-        <section class="px-8 py-16 sm:py-24 md:py-32">
+        <section class="py-16 sm:py-24 md:py-32">
             <div class="
-                grid grid-cols-1 gap-12 text-center
+                grid grid-cols-1 gap-12 text-center px-8 mx-auto max-w-screen-xl
                 sm:grid-cols-2 sm:gap-10 sm:text-start
-                md:grid-cols-4 md:gap-6 md:mx-auto max-w-screen-xl
+                md:grid-cols-4 md:gap-6
             ">
                 <div>
                     <img class="mx-auto sm:mx-0 mb-4" src="../assets/icon1.svg" alt="">
@@ -79,8 +80,8 @@
                 </div>
             </div>
         </section>
-        <section class="px-8 py-16 sm:py-24 md:py-32 bg-[#F1F8FF]">
-            <div class="mx-auto max-w-screen-xl">
+        <section class="py-16 sm:py-24 md:py-32 bg-[#F1F8FF]">
+            <div class="px-8 mx-auto max-w-screen-xl">
                 <h1 class="mb-6 text-center font-bold text-4xl text-primary">Vaizdai iš mūsų įmonės</h1>
                 <p class="mx-auto md:w-1/2 mb-14 text-center text-secondary">
                     Nulla volutpat in ut risus imperdiet aenean justo, tristique neque scelerisque feugiat adipiscing
@@ -93,8 +94,8 @@
                 </div>
             </div>
         </section>
-        <section class="px-8 py-16 sm:py-24 md:py-32">
-            <div class="mx-auto max-w-screen-xl">
+        <section class="py-16 sm:py-24 md:py-32">
+            <div class="px-8 mx-auto max-w-screen-xl">
                 <h1 class="mb-7 text-2xl font-normal text-primary">Mūsų statistika</h1>
                 <p class="mb-14 md:w-1/2 text-4xl font-medium text-primary">Non sapien egestas mi, faucibus dis vel
                     velit eu, quisque ultrices aliquet diam faucibus ridiculus.</p>
@@ -123,32 +124,40 @@
                 </div>
             </div>
         </section>
-        <section class="px-8 py-16 sm:py-24 md:py-32 bg-[#F1F8FF]">
-            <div class="mx-auto max-w-screen-xl">
+        <section class="py-16 sm:py-24 md:py-32 bg-[#F1F8FF]">
+            <div class="px-8 mx-auto max-w-screen-xl">
                 <h1 class="mb-6 text-center font-bold text-4xl text-primary">Darbų galerija</h1>
                 <p class="mx-auto md:w-1/2 mb-14 text-center text-secondary">
-                    Amet rutrum molestie nibh sed nulla facilisis commodo, dui in viverra lectus quis faucibus volutpat leo ut sed dignissim egestas
+                    Amet rutrum molestie nibh sed nulla facilisis commodo, dui in viverra lectus quis faucibus volutpat
+                    leo ut sed dignissim egestas
                 </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 sm:gap-y-16 text-center sm:text-start">
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 sm:gap-y-16 text-center sm:text-start">
                     <div>
-                        <img class="mb-8 w-full h-[262px] object-cover object-center" src="../assets/gallery1.jpg" alt="Pirmas projektas">
+                        <img class="mb-8 w-full h-[262px] object-cover object-center" src="../assets/gallery1.jpg"
+                            alt="Pirmas projektas">
                         <h2 class="mb-4 font-bold text-2xl text-primary">Pirmas projektas</h2>
                         <p class="font-normal text-lg text-secondary">
-                            In proin odio pellentesque vitae, fringilla parturient nulla dignissim turpis mauris maecenas mattis phasellus eu, bibendum viverra curabitur elementum viverra.
+                            In proin odio pellentesque vitae, fringilla parturient nulla dignissim turpis mauris
+                            maecenas mattis phasellus eu, bibendum viverra curabitur elementum viverra.
                         </p>
                     </div>
                     <div>
-                        <img class="mb-8 w-full h-[262px] object-cover object-center" src="../assets/gallery2.jpg" alt="Antras projektas">
+                        <img class="mb-8 w-full h-[262px] object-cover object-center" src="../assets/gallery2.jpg"
+                            alt="Antras projektas">
                         <h2 class="mb-4 font-bold text-2xl text-primary">Antras projektas</h2>
                         <p class="font-normal text-lg text-secondary">
-                            Euismod maecenas magna purus nibh mi, sagittis ultrices orci ultrices vel tempus viverra non tempus tincidunt sed donec cursus cras.
+                            Euismod maecenas magna purus nibh mi, sagittis ultrices orci ultrices vel tempus viverra non
+                            tempus tincidunt sed donec cursus cras.
                         </p>
                     </div>
                     <div>
-                        <img class="mb-8 w-full h-[262px] object-cover object-center" src="../assets/gallery3.jpg" alt="Trečias projektas">
+                        <img class="mb-8 w-full h-[262px] object-cover object-center" src="../assets/gallery3.jpg"
+                            alt="Trečias projektas">
                         <h2 class="mb-4 font-bold text-2xl text-primary">Trečias projektas</h2>
                         <p class="font-normal text-lg text-secondary">
-                            Nisl eget sem vestibulum, sollicitudin at tortor, nunc porttitor vestibulum, id urna, at sit a nulla eget sed aliquet amet.
+                            Nisl eget sem vestibulum, sollicitudin at tortor, nunc porttitor vestibulum, id urna, at sit
+                            a nulla eget sed aliquet amet.
                         </p>
                     </div>
                 </div>
