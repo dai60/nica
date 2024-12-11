@@ -16,33 +16,33 @@
     <script src="script.js" defer></script>
 </head>
 
-<body class="font-roboto">
+<body class="font-roboto selection:bg-green selection:text-white">
     <header class="flex flex-col w-full min-h-screen">
         <nav class="flex flex-col md:flex-row items-center gap-4 px-8 py-6 text-nowrap max-w-screen-xl mx-auto w-full">
             <div class="flex justify-between items-center w-full mx-auto max-w-screen-xl">
                 <a class="font-roboto-condensed font-bold text-2xl text-[#878B9B]" href="#">nica reklama</a>
-                <div onclick="toggleDropdown('nav-dropdown-menu')" class="block md:hidden border-primary border-t w-[32px] h-[18px]">
+                <div onclick="toggleDropdown('nav-dropdown-menu')"
+                    class="block md:hidden border-primary border-t w-[32px] h-[18px]">
                     <div class="border-primary border-y mt-[8px] h-[9px]"></div>
                 </div>
             </div>
             <div id="nav-dropdown-menu" class="hidden flex-col gap-2 text-center md:flex md:flex-row md:gap-12">
                 <a class="font-black text-green" href="#">Pagrindinis</a>
-                <a href="#">Apie mus</a>
-                <a href="#">Paslaugos</a>
-                <a href="#">Straipsniai</a>
-                <a href="#">Kontaktai</a>
+                <a class="hover:text-green transition-colors" href="#">Apie mus</a>
+                <a class="hover:text-green transition-colors" href="#">Paslaugos</a>
+                <a class="hover:text-green transition-colors" href="#">Straipsniai</a>
+                <a class="hover:text-green transition-colors" href="#">Kontaktai</a>
             </div>
         </nav>
-        <div class="
-            bg-[url('../assets/header.jpg')] bg-[#626471] bg-opacity-50 bg-blend-multiply bg-cover bg-center
-            flex flex-grow justify-center items-center
-        ">
-            <div class="text-white text-center flex flex-col items-center py-24">
+        <div class="relative bg-[url('../assets/header.jpg')] bg-cover bg-center flex flex-grow justify-center items-center">
+            <div class="absolute inset-0 bg-[#626471]/50"></div>
+            <div class="text-white text-center flex flex-col items-center py-24 z-10">
                 <h1 class="text-5xl sm:text-7xl font-medium mb-8">Įmonė besiverčianti reklama</h1>
                 <p class="text-2xl font-normal text-[#D5D7D8] w-3/4 mb-12">
                     Įmonės pristatymas keliais sakiniais, pagrindinės veiklos apibūdinimas
                 </p>
-                <a class="block uppercase bg-green px-12 py-3" href="#">Susisiekti</a>
+                <a class="block uppercase px-12 py-3 rounded-md bg-green transition-transform hover:scale-105"
+                    href="#">Susisiekti</a>
             </div>
         </div>
     </header>
@@ -83,13 +83,14 @@
         <section class="py-16 sm:py-24 md:py-32 bg-[#F1F8FF]">
             <div class="px-8 mx-auto max-w-screen-xl">
                 <h1 class="mb-6 text-center font-bold text-4xl text-primary">Vaizdai iš mūsų įmonės</h1>
-                <p class="mx-auto md:w-1/2 mb-14 text-center text-secondary">
+                <p class="mx-auto md:w-1/2 mb-14 text-lg text-center text-secondary">
                     Nulla volutpat in ut risus imperdiet aenean justo, tristique neque scelerisque feugiat adipiscing
                     non nulla feugiat lacus sem sed maecenas
                 </p>
-                <div class="relative mx-auto md:w-3/4">
+                <div class="relative group mx-auto md:w-3/4 hover:cursor-pointer">
                     <img src="../assets/video.jpg" alt="Video">
-                    <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    <div class="absolute inset-0 bg-green/0 group-hover:bg-green/20 transition-colors"></div>
+                    <img class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform group-hover:scale-110"
                         src="../assets/play.svg" alt="">
                 </div>
             </div>
@@ -127,7 +128,7 @@
         <section class="py-16 sm:py-24 md:py-32 bg-[#F1F8FF]">
             <div class="px-8 mx-auto max-w-screen-xl">
                 <h1 class="mb-6 text-center font-bold text-4xl text-primary">Darbų galerija</h1>
-                <p class="mx-auto md:w-1/2 mb-14 text-center text-secondary">
+                <p class="mx-auto md:w-1/2 mb-14 text-lg text-center text-secondary">
                     Amet rutrum molestie nibh sed nulla facilisis commodo, dui in viverra lectus quis faucibus volutpat
                     leo ut sed dignissim egestas
                 </p>
@@ -163,7 +164,133 @@
                 </div>
             </div>
         </section>
+        <section class="py-16 sm:py-24 md:py-32 bg-[#5F6B81]">
+            <div class="px-8 mx-auto max-w-screen-xl text-white">
+                <h1 class="mb-6 text-center font-bold text-4xl">Prenumeruoti</h1>
+                <p class="mx-auto md:w-1/2 mb-14 text-lg text-center">
+                    Amet tristique et integer dolor mi nullam risus id dapibus ornare in morbi non adipiscing
+                    pellentesque facilisis sed amet, porta
+                </p>
+                <form class="flex flex-col justify-center gap-y-4 sm:flex-row mx-auto sm:w-3/4 md:px-14 md:w-1/2">
+                    <input
+                        class="flex-1 text-lg px-9 py-5 rounded-md sm:rounded-r-none text-primary placeholder:text-[#D8D8D8]"
+                        type="email" placeholder="Jūsų el. pašto adresas">
+                    <input class="text-lg px-9 py-5 rounded-md sm:rounded-l-none bg-green hover:cursor-pointer"
+                        type="submit" value="Prenumeruoti">
+                </form>
+            </div>
+        </section>
+        <section class="py-16 sm:py-24 md:py-32">
+            <div class="px-8 mx-auto max-w-screen-xl">
+                <h1 class="mb-6 text-center font-bold text-4xl text-primary">Komanda</h1>
+                <p class="mx-auto md:w-1/2 mb-14 text-lg text-center text-secondary">
+                    Gravida arcu consectetur ut fringilla augue risus enim sit mattis lacinia libero netus lectus aenean
+                    proin lobortis praesent lobortis at
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12 sm:gap-y-14">
+                    <div class="bg-[#EEEEEE] text-center">
+                        <img class="w-full h-[392px] mb-6 object-cover object-center" src="../assets/team1.jpg"
+                            alt="Ona Onutienė">
+                        <h2 class="mb-1 font-bold text-2xl text-primary">Ona Onutienė</h2>
+                        <p class="mb-6 text-secondary">Direktorė</p>
+                    </div>
+                    <div class="bg-[#EEEEEE] text-center">
+                        <img class="w-full h-[392px] mb-6 object-cover object-center" src="../assets/team2.jpg"
+                            alt="Petras Petrauskas">
+                        <h2 class="mb-1 font-bold text-2xl text-primary">Petras Petrauskas</h2>
+                        <p class="mb-6 text-secondary">Reklamos vadovas</p>
+                    </div>
+                    <div class="bg-[#EEEEEE] text-center">
+                        <img class="w-full h-[392px] mb-6 object-cover object-center" src="../assets/team3.jpg"
+                            alt="Inga Ingauskienė">
+                        <h2 class="mb-1 font-bold text-2xl text-primary">Inga Ingauskienė</h2>
+                        <p class="mb-6 text-secondary">Marketingo vadovė</p>
+                    </div>
+                    <div class="bg-[#EEEEEE] text-center">
+                        <img class="w-full h-[392px] mb-6 object-cover object-center" src="../assets/team4.jpg"
+                            alt="Giedrius Giedriauskas">
+                        <h2 class="mb-1 font-bold text-2xl text-primary">Giedrius Giedriauskas</h2>
+                        <p class="mb-6 text-secondary">SEO specialistas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="border-t border-[#D8D8D8]">
+        <section class="py-16 sm:py-24 md:py-32">
+            <div class="px-8 mx-auto max-w-screen-xl">
+                <h1 class="mb-6 text-center font-bold text-4xl text-primary">Pakalbėkite apie tai kas jums svarbu</h1>
+                <p class="mx-auto md:w-1/2 mb-9 text-lg text-center text-secondary">
+                    At nunc interdum suscipit sit justo, commodo amet tristique aliquet sit mi proin facilisi et,
+                    pharetra pellentesque id tortor tempus
+                </p>
+                <a class="block mx-auto w-fit uppercase px-12 py-3 rounded-md bg-green text-white transition-transform hover:scale-105"
+                    href="#">Susisiekti</a>
+            </div>
+        </section>
     </main>
+    <footer>
+        <div class="bg-[#2F323B] text-white py-16">
+            <div class="
+                grid grid-cols-1 gap-y-14 gap-x-8 px-8 mx-auto max-w-screen-xl text-center
+                sm:grid-cols-2 sm:text-start
+                md:grid-cols-4
+            ">
+                <div class="w-full sm:w-3/4">
+                    <h1 class="font-roboto-condensed mb-7 font-bold text-2xl">nica reklama</h1>
+                    <p class="text-footer-secondary">
+                        Dictum bibendum nisl donec morbi at pharetra sed quis vitae integer pharetra, tincidunt morbi
+                        nec aliquam non lacus, sagittis non
+                    </p>
+                </div>
+                <div class="w-full sm:w-3/4">
+                    <h1 class="uppercase tracking-wider mb-9">Kontaktai</h1>
+                    <address class="not-italic text-footer-secondary">
+                        Adresas: Gatvė g. 24-10, Kaunas, LT54877, Lietuva<br>
+                        <br>
+                        Telefonai pasiteiravimui:<br>
+                        <a class="transition-colors hover:text-footer-primary" href="tel:+37012345678">+370 123
+                            45678</a><br>
+                        <a class="transition-colors hover:text-footer-primary" href="tel:+37098765432">+370 987
+                            65432</a>
+                    </address>
+                </div>
+                <div class="w-5/6 mx-auto sm:w-3/4 sm:mx-0">
+                    <h1 class="uppercase tracking-wider mb-9">Straipsniai</h1>
+                    <div>
+                        <h2>Aenean convallis eros</h2>
+                        <p class="text-footer-primary">Vestibulum diam venenatis</p>
+                    </div>
+                    <hr class="border-t border-[#707070] my-3">
+                    <div>
+                        <h2>Aenean convallis eros</h2>
+                        <p class="text-footer-primary">Vestibulum diam venenatis</p>
+                    </div>
+                    <hr class="border-t border-[#707070] my-3">
+                    <div>
+                        <h2>Aenean convallis eros</h2>
+                        <p class="text-footer-primary">Vestibulum diam venenatis</p>
+                    </div>
+                </div>
+                <nav class="w-5/6 mx-auto sm:w-3/4 sm:mx-0">
+                    <h1 class="uppercase tracking-wider mb-9">Navigacija</h1>
+                    <a class="transition-colors hover:text-footer-secondary" href="#">Pagrindinis</a>
+                    <hr class="border-t border-[#707070] my-3">
+                    <a class="transition-colors hover:text-footer-secondary" href="#">Paslaugos</a>
+                    <hr class="border-t border-[#707070] my-3">
+                    <a class="transition-colors hover:text-footer-secondary" href="#">Apie mus</a>
+                    <hr class="border-t border-[#707070] my-3">
+                    <a class="transition-colors hover:text-footer-secondary" href="#">Straipsniai</a>
+                    <hr class="border-t border-[#707070] my-3">
+                    <a class="transition-colors hover:text-footer-secondary" href="#">Kontaktai</a>
+                </nav>
+            </div>
+        </div>
+        <div class="bg-[#2A2D36] py-6">
+            <p class="text-footer-secondary sm:px-8 mx-auto max-w-screen-xl text-center sm:text-start">
+                Visos teisės saugomos, nica reklama
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>
